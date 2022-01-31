@@ -35,6 +35,8 @@ class BadRequestExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -56,6 +58,8 @@ class UnauthorizedExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -77,6 +81,8 @@ class ForbiddenExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -98,6 +104,8 @@ class NotFoundExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -119,6 +127,8 @@ class MethodNotAllowedExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -140,6 +150,8 @@ class NotAcceptableExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -161,6 +173,8 @@ class RequestTimeoutExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -182,6 +196,8 @@ class ConflictExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -203,6 +219,8 @@ class GoneExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -224,6 +242,8 @@ class PreconditionFailedExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -245,6 +265,8 @@ class PayloadTooLargeExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -266,6 +288,8 @@ class UnsupportedMediaTypeExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }
@@ -287,6 +311,8 @@ class UnprocessableEntityExceptionFilter implements ExceptionFilter {
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
         };
+
+        console.log("Response to be sent :: " + responseBody)
     
         httpAdapter.reply(ctx.getResponse(), responseBody, exception.getStatus());
     }

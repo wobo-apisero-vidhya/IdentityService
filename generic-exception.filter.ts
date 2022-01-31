@@ -23,6 +23,8 @@ import { HttpAdapterHost } from '@nestjs/core';
         timestamp: new Date().toISOString(),
         path: httpAdapter.getRequestUrl(ctx.getRequest()),
       };
+
+      console.log("Response to be sent :: " + responseBody)
   
       httpAdapter.reply(ctx.getResponse(), responseBody, httpStatus);
     }
