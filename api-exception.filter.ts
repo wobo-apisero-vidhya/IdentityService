@@ -30,7 +30,7 @@ class BadRequestExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "The server cannot or will not process the request due to an apparent client error.",
+          message: "Bad Request - Please check the request sent.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -51,7 +51,7 @@ class UnauthorizedExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "Authorization failed or was not provided.",
+          message: "Authorization failed. Please contact the admin.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -72,7 +72,7 @@ class ForbiddenExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "Server refusing action. Please check if you all the required permissions.",
+          message: "You don't have access to the requested action. Please contact the admin.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -93,7 +93,7 @@ class NotFoundExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "The requested resource could not be found but may be available in the future.",
+          message: "The requested resource could not be found.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -114,7 +114,7 @@ class MethodNotAllowedExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "A request method is not supported for the requested resource.",
+          message: "The requested method is not supported for the provided url.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -135,7 +135,7 @@ class NotAcceptableExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "The request is not acceptable as per the Accept Headers sent in the request.",
+          message: "The request was denied by the server. Please check the request",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -156,7 +156,7 @@ class RequestTimeoutExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "The server timed out waiting for the request.",
+          message: "Time-out. The server took too long to respond. Please try again later.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -177,7 +177,7 @@ class ConflictExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "The request could not be processed because of conflict in the current state of the resource",
+          message: "Conflict - Your request could not be processed.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -198,7 +198,7 @@ class GoneExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "The resource requested is no longer available and will not be available again.",
+          message: "Your requested resource is no longer available and will not be available again.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -219,7 +219,7 @@ class PreconditionFailedExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "The server does not meet one of the preconditions that the requester put on the request header fields.",
+          message: "Your request cannot be processed as the precondition failed. Please check the request.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -240,7 +240,7 @@ class PayloadTooLargeExceptionFilter implements ExceptionFilter {
     
         const responseBody: ApiException = {
           statusCode: exception.getStatus(),
-          message: "The request is larger than the server is willing or able to process.",
+          message: "Your request payload was too large for the server to process.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -261,7 +261,7 @@ class UnsupportedMediaTypeExceptionFilter implements ExceptionFilter {
     
         const responseBody = {
           statusCode: exception.getStatus(),
-          message: "The request entity has a media type which the server or resource does not support.",
+          message: "The incoming media type is not supported. Please check the request.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),
@@ -282,7 +282,7 @@ class UnprocessableEntityExceptionFilter implements ExceptionFilter {
     
         const responseBody = {
           statusCode: exception.getStatus(),
-          message: "The request was well-formed but was unable to be followed due to semantic errors.",
+          message: "Your request was not processed. Please check the request and request body.",
           error: exception.message,
           timestamp: new Date().toISOString(),
           path: httpAdapter.getRequestUrl(ctx.getRequest()),

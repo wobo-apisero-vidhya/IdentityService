@@ -18,7 +18,7 @@ import { HttpAdapterHost } from '@nestjs/core';
   
       const responseBody = {
         statusCode: httpStatus,
-        message: "Internal Server Error",
+        message: "Internal Server Error. Please try again later.",
         error: exception.message,
         timestamp: new Date().toISOString(),
         path: httpAdapter.getRequestUrl(ctx.getRequest()),
